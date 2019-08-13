@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="application/javascript">
+            function loadJSON()
+            {
+                var data_file="http://www.tutorialspoint.com/json/data.json";
+                var http_request=new XMLHttpRequest();
+                http_request.onreadystatechange=function()
+                {
+                    if(http_request.readyState==4)
+                    {
+                        var jsonObj=JSON.parse(http_request.responseText);
+
+                        document.getElementById("Name").innerHTML=jsonObj.name;
+                        document.getElementById("Country").innerHTML=jsonObj.country;
+
+                    }
+                }
+                http_request.open("GET",data_file,true);
+                http_request.send();
+                send(jsonObj.name);
+
+            }
+            
+            
+            </script>
+       <title> Try JSON </title>
+
+    </head>
+    <body>
+        <h1>Cricketer Details</h1>
+        <table class="src">
+            <tr><th>Name </th><th><center>Country </center></th></tr>
+            <td><div id = "Name"><center>Sachin</center> </div></td>
+         <td><div id = "Country"><center>India </center></div></td></tr>
+        </table>
+        <div class="central">
+            <button type="button" onclick="loadJSON()">Update Details</button>
+        </div>
+    </body>
+
+</body>
+</html>

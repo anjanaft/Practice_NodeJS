@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="application/javascript">
+            function loadJSON()
+            {
+                var data_file="https://learnwebcode.github.io/json-example/animals-1.json";
+                var http_request=new XMLHttpRequest();
+                http_request.onreadystatechange=function()
+                {
+                    if(http_request.readyState==4)
+                    {
+                        var jsonObj=JSON.parse(http_request.responseText);
+                        
+    
+
+                            
+                           //for(var i=0;i<jsonObj.length;i++) {
+
+                        document.getElementById("name").innerHTML=jsonObj[0].name;
+                        document.getElementById("species").innerHTML=jsonObj[0].species;
+                        document.getElementById("food").innerHTML=jsonObj[0].food.likes;
+                        document.getElementById("food").innerHTML=jsonObj[0].food.dislikes;
+                        
+                    //}
+                }
+                http_request.open("GET",data_file,true);
+                http_request.send();
+                send(jsonObj.name);
+
+            }
+            
+            
+            </script>
+       <title> Try JSON </title>
+
+    </head>
+    <body>
+        <h1>Animal Details</h1>
+        <table class="src">
+            <tr><th>Name </th><th><center>Species </center></th></tr>
+            <td><div id = "name"> </div></td>
+         <td><div id = "species"> </div></td></tr>
+        </table>
+        <div class="central">
+            <button type="button" onclick="loadJSON()">Update Details</button>
+        </div>
+    </body>
+
+</body>
+</html>

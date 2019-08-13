@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <link rel="stylesheet"
+        type="text/css" href="/home/ubuntu/Desktop/Anjana_Francis/Day04/a1.css"
+        
+
+    </head>
+    <body>
+        <h1>Welcome to my website!</h1>
+        <h2>Who are you!</h2>
+        <form>
+        <input type="text" id="a"  value="" >
+        <br><br>
+        <input type="button" value="Click me" onclick="myfunction()" >
+        </form>
+        <br>
+        <p id="b"></p>
+        <script>
+        function myfunction()
+        {
+            var x=document.getElementById("a").value; 
+            if(x == "")
+                 {
+                     alert("Name must be filled out");
+                     return false;
+                 }
+            else
+            {
+               document.getElementById("b").innerHTML=x;
+            }
+             }
+            </script>
+            
+    </body>
+</html>

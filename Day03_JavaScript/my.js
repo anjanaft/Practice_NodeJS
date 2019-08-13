@@ -1,0 +1,1 @@
+console.log(document.getElementById('a').style.color='red');
